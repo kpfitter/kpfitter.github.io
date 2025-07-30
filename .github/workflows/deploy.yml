@@ -99,7 +99,10 @@ jobs:
           npm install -g purgecss
           purgecss -c purgecss.config.js
       - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: _site
+          if: github.event_name != 'pull_request'
+          uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            branch: gh-pages        # 👈 deployment branch
+            folder: _site           # 👈 Jekyll output folder
+            clean: true             # optional: removes old files in gh-pages
+            single-commit: true     # cleaner commit history
