@@ -102,7 +102,7 @@ jobs:
           if: github.event_name != 'pull_request'
           uses: JamesIves/github-pages-deploy-action@v4
           with:
-            branch: gh-pages        # 👈 deployment branch
+            branch: main        # 👈 deployment branch
             folder: _site           # 👈 Jekyll output folder
             clean: true             # optional: removes old files in gh-pages
             single-commit: true     # cleaner commit history
